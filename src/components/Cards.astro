@@ -4,6 +4,7 @@ import IconReact from '../assets/icons/IconReact.astro'
 import IconTailwind from '../assets/icons/IconTailwind.astro'
 import IconFirebase from '../assets/icons/IconFirebase.astro'
 import IconNextUI from '../assets/icons/IconNextUI.astro'
+import IconLink from '../assets/icons/IconLink.astro'
 
 import RapidCartImg from '../assets/img/rapid-cart.png'
 import SmileNotesImg from '../assets/img/smile-notes.png'
@@ -43,6 +44,7 @@ const projects = [
       'Creado con React, Tailwind, Framer Motion. Compra artículos de manera rápida y sencilla.',
     thumbnail: RapidCartImg,
     link: 'https://rapid-cart.vercel.app/',
+    repo: 'https://github.com/MiguelAJM/rapid-cart',
     tags: [TAGS.REACT, TAGS.FRAMER, TAGS.TAILWIND]
   },
   {
@@ -51,16 +53,28 @@ const projects = [
       'Ahora crear notas es más fácil con esta aplicación hecha con React, NextUI y Firebase.',
     thumbnail: SmileNotesImg,
     link: 'https://smile-notes-app.vercel.app/',
+    repo: 'https://github.com/MiguelAJM/smile-notes-app',
     tags: [TAGS.REACT, TAGS.NEXTUI, TAGS.FIREBASE]
   }
 ]
 ---
 
 {
-  projects.map(({ title, description, thumbnail, link, tags }) => (
+  projects.map(({ title, description, thumbnail, link, repo, tags }) => (
     <li class='col-span-4'>
       <article>
-        <h2 class='text-pink-300 text-4xl md:text-5xl font-extrabold mb-5'>{title}</h2>
+        <div class='flex items-center justify-between mb-5'>
+          <h2 class='text-pink-300 text-4xl md:text-5xl font-extrabold'>
+            {title}
+          </h2>
+
+          <a href={repo} target='_blank' class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-200 text-black text-lg md:text-xl font-bold rounded-xl group/hover'>
+            <span>
+              <IconLink class='size-5 md:size-8 duration-300 ease-in-out transition group-hover/hover:scale-110' />
+            </span>
+            Code
+          </a>
+        </div>
         <p class='text-xl md:text-2xl text-gray-300/90'>{description}</p>
       </article>
 
@@ -76,12 +90,13 @@ const projects = [
 
       <article class='relative rounded-xl overflow-hidden bg-slate-800 w-full'>
         <a href={link} target='_blank'>
+          <span class='hidden'>{title}</span>
           <img
             class='transition-transform duration-300 ease-in-out hover:scale-150'
             src={thumbnail.src}
             alt={`Proyecto: ${title}`}
           />
-          </a>
+        </a>
       </article>
     </li>
   ))
