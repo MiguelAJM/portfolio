@@ -15,15 +15,15 @@ const tecnologies = [
 ]
 ---
 
-<section id='habilidades' class='md:w-[720px] container mx-auto pt-20 pb-8'>
-  <h2 class='flex gap-2 items-center text-5xl font-extrabold mb-8'>
-    <IconCode class='size-12' /><span>Habilidades</span>
+<section id='habilidades' class='w-full md:w-[720px] container mx-auto pt-20 pb-8'>
+  <h2 class='flex gap-2 items-center text-4xl md:text-5xl font-extrabold mb-8'>
+    <IconCode class='size-10 md:size-12' /><span>Habilidades</span>
   </h2>
 
   <ul class='grid grid-cols-4 gap-2 text-center'>
     {
       tecnologies.map((item) => (
-        <li class='size-full flex items-center gap-2 p-4 border-2 bg-slate-900 border-slate-700 rounded-2xl'>
+        <li class='col-span-2 md:col-span-1 size-full flex items-center gap-2 p-4 border-2 bg-slate-900 border-slate-700 rounded-2xl'>
           <span>
             <item.icon class='size-5' />
           </span>

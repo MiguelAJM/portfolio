@@ -1,19 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import About from '../components/About.astro'
-import Header from '../components/Header.astro'
 import Social from '../components/Social.astro'
 import Projects from '../components/Projects.astro'
 import Skills from '../components/Skills.astro'
-import Email from '../components/Email.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout
   title='Miguel - Portfolio'
   description='No soy un robot, soy un desarrollador Front-End apasionado por el diseño web y la programación.'
 >
-  <Header />
-  <main class='relative'>
+  <main class='relative px-4'>
     <About />
 
     <Social />
@@ -22,5 +20,5 @@ import Email from '../components/Email.astro'
 
     <Skills />
   </main>
-  <Email />
+  <Footer/>
 </Layout>
