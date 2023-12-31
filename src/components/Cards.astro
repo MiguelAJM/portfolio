@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-
 import IconFramer from '../assets/icons/IconFramer.astro'
 import IconReact from '../assets/icons/IconReact.astro'
 import IconTailwind from '../assets/icons/IconTailwind.astro'
@@ -78,9 +76,9 @@ const projects = [
 
       <article class='relative rounded-xl overflow-hidden bg-slate-800 w-full'>
         <a href={link} target='_blank'>
-          <Image
+          <img
             class='transition-transform duration-300 ease-in-out hover:scale-150'
-            src={thumbnail}
+            src={thumbnail.src}
             alt={`Proyecto: ${title}`}
           />
           </a>
