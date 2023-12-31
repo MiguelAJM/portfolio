@@ -1,0 +1,35 @@
+---
+import IconCode from '../assets/icons/IconCode.astro'
+import IconFirebase from '../assets/icons/IconFirebase.astro'
+import IconJS from '../assets/icons/IconJS.astro'
+import IconReact from '../assets/icons/IconReact.astro'
+import IconTS from '../assets/icons/IconTS.astro'
+import IconTailwind from '../assets/icons/IconTailwind.astro'
+
+const tecnologies = [
+  { name: 'JavaScript', icon: IconJS },
+  { name: 'TypeScript', icon: IconTS },
+  { name: 'Tailwind', icon: IconTailwind },
+  { name: 'React', icon: IconReact },
+  { name: 'Firebase', icon: IconFirebase }
+]
+---
+
+<section id='habilidades' class='md:w-[720px] container mx-auto pt-20 pb-8'>
+  <h2 class='flex gap-2 items-center text-5xl font-extrabold mb-8'>
+    <IconCode class='size-12' /><span>Habilidades</span>
+  </h2>
+
+  <ul class='grid grid-cols-4 gap-2 text-center'>
+    {
+      tecnologies.map((item) => (
+        <li class='size-full flex items-center gap-2 p-4 border-2 bg-slate-900 border-slate-700 rounded-2xl'>
+          <span>
+            <item.icon class='size-5' />
+          </span>
+          <h3 class='font-bold'>{item.name}</h3>
+        </li>
+      ))
+    }
+  </ul>
+</section>

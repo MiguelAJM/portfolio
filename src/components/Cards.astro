@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets'
+
+import IconFramer from '../assets/icons/IconFramer.astro'
+import IconReact from '../assets/icons/IconReact.astro'
+import IconTailwind from '../assets/icons/IconTailwind.astro'
+import IconFirebase from '../assets/icons/IconFirebase.astro'
+import IconNextUI from '../assets/icons/IconNextUI.astro'
+
+import RapidCartImg from '../assets/img/rapid-cart.png'
+import SmileNotesImg from '../assets/img/smile-notes.png'
+
+const TAGS = {
+  REACT: {
+    name: 'React',
+    color: 'bg-blue-500/30',
+    icon: IconReact
+  },
+  FRAMER: {
+    name: 'Framer Motion',
+    color: 'bg-pink-500/30',
+    icon: IconFramer
+  },
+  TAILWIND: {
+    name: 'Tailwind',
+    color: 'bg-blue-600/30',
+    icon: IconTailwind
+  },
+  NEXTUI: {
+    name: 'NextUI',
+    color: 'bg-white/50 text-black',
+    icon: IconNextUI
+  },
+  FIREBASE: {
+    name: 'Firebase',
+    color: 'bg-yellow-500/30',
+    icon: IconFirebase
+  }
+}
+
+const projects = [
+  {
+    title: 'Rapid Cart',
+    description:
+      'Creado con React, Tailwind, Framer Motion. Compra artículos de manera rápida y sencilla.',
+    thumbnail: RapidCartImg,
+    link: 'https://rapid-cart.vercel.app/',
+    tags: [TAGS.REACT, TAGS.FRAMER, TAGS.TAILWIND]
+  },
+  {
+    title: 'Smile Notes',
+    description:
+      'Ahora crear notas es más fácil con esta aplicación hecha con React, NextUI y Firebase.',
+    thumbnail: SmileNotesImg,
+    link: 'https://smile-notes-app.vercel.app/',
+    tags: [TAGS.REACT, TAGS.NEXTUI, TAGS.FIREBASE]
+  }
+]
+---
+
+{
+  projects.map(({ title, description, thumbnail, link, tags }) => (
+    <li class='col-span-4'>
+      <article>
+        <h2 class='text-pink-300 text-5xl font-extrabold mb-5'>{title}</h2>
+        <p class='text-2xl text-gray-300/90'>{description}</p>
+      </article>
+
+      <ul class='flex gap-4 items-center my-5'>
+        {tags.map((tag) => (
+          <li
+            class={`px-4 py-1 ${tag.color} rounded-full flex items-center gap-2`}
+          >
+            <tag.icon class='size-5' /> {tag.name}
+          </li>
+        ))}
+      </ul>
+
+      <article class='relative rounded-xl overflow-hidden bg-slate-800 w-full'>
+        <a href={link} target='_blank'>
+          <Image
+            class='transition-transform duration-300 ease-in-out hover:scale-150'
+            src={thumbnail}
+            alt={`Proyecto: ${title}`}
+          />
+          </a>
+      </article>
+    </li>
+  ))
+}

@@ -1,0 +1,23 @@
+---
+import IconCode from "../assets/icons/IconCode.astro";
+const avatarImage = 'https://avatars.githubusercontent.com/u/118173171?v=4'
+---
+
+<section id='sobre-mi' class='md:w-[720px] container mx-auto pt-32 pb-20'>
+    <img
+      class='size-20 rounded-full'
+      src={avatarImage}
+      alt='Imagen de perfil'
+    />
+    <article class='mt-8 mb-8'>
+      <h2 class='flex gap-2 items-center text-5xl font-extrabold mb-8'>
+        <IconCode class='size-12' /><span>Miguel Angel</span>
+      </h2>
+      <p class='text-2xl text-balance text-gray-300/90'>
+        No soy un robot, <span class='text-sky-300'
+          >soy un desarrollador Front-End</span
+        > apasionado por el
+        <span class='text-pink-300'>diseño web y la programación</span>.
+      </p>
+    </article>
+  </section>
