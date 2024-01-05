@@ -1,6 +1,7 @@
 ---
 import IconFramer from '../assets/icons/IconFramer.astro'
 import IconReact from '../assets/icons/IconReact.astro'
+import IconNextJS from '../assets/icons/IconNextJS.astro'
 import IconTailwind from '../assets/icons/IconTailwind.astro'
 import IconFirebase from '../assets/icons/IconFirebase.astro'
 import IconNextUI from '../assets/icons/IconNextUI.astro'
@@ -8,12 +9,18 @@ import IconLink from '../assets/icons/IconLink.astro'
 
 import RapidCartImg from '../assets/img/rapid-cart.png'
 import SmileNotesImg from '../assets/img/smile-notes.png'
+import AnimeHubImg from '../assets/img/anime-app.png'
 
 const TAGS = {
   REACT: {
     name: 'React',
     color: 'bg-blue-500/30',
     icon: IconReact
+  },
+  NEXTJS: {
+    name: 'NextJS',
+    color: 'bg-white/30',
+    icon: IconNextJS
   },
   FRAMER: {
     name: 'Framer Motion',
@@ -55,6 +62,15 @@ const projects = [
     link: 'https://smile-notes-app.vercel.app/',
     repo: 'https://github.com/MiguelAJM/smile-notes-app',
     tags: [TAGS.REACT, TAGS.NEXTUI, TAGS.FIREBASE]
+  },
+  {
+    title: 'Anime Hub',
+    description:
+      'Busca animes de manera sencilla y sencilla. Puedes guardar animes tus animes favoritos. Hecha con NextJS y Tailwind.',
+    thumbnail: AnimeHubImg,
+    link: 'https://animes-hub.vercel.app/',
+    repo: 'https://github.com/MiguelAJM/animes-hub',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND]
   }
 ]
 ---
@@ -68,11 +84,15 @@ const projects = [
             {title}
           </h2>
 
-          <a href={repo} target='_blank' class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-200 text-black text-lg md:text-xl font-bold rounded-xl group/hover'>
+          <a
+            href={repo}
+            target='_blank'
+            class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-200 text-black text-lg md:text-xl font-bold rounded-xl group/hover'
+          >
             <span>
               <IconLink class='size-5 md:size-8 duration-300 ease-in-out transition group-hover/hover:scale-110' />
             </span>
-            Code 
+            Code
           </a>
         </div>
         <p class='text-xl md:text-2xl text-gray-300/90'>{description}</p>
