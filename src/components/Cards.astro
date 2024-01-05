@@ -15,32 +15,32 @@ const TAGS = {
   REACT: {
     name: 'React',
     color: 'bg-blue-500/30',
-    icon: IconReact
+    Icon: IconReact
   },
   NEXTJS: {
     name: 'NextJS',
     color: 'bg-white/30',
-    icon: IconNextJS
+    Icon: IconNextJS
   },
   FRAMER: {
     name: 'Framer Motion',
     color: 'bg-pink-500/30',
-    icon: IconFramer
+    Icon: IconFramer
   },
   TAILWIND: {
     name: 'Tailwind',
     color: 'bg-blue-600/30',
-    icon: IconTailwind
+    Icon: IconTailwind
   },
   NEXTUI: {
     name: 'NextUI',
     color: 'bg-white/50 text-black',
-    icon: IconNextUI
+    Icon: IconNextUI
   },
   FIREBASE: {
     name: 'Firebase',
     color: 'bg-yellow-500/30',
-    icon: IconFirebase
+    Icon: IconFirebase
   }
 }
 
@@ -79,6 +79,9 @@ const projects = [
 {
   projects.map(({ title, description, thumbnail, link, repo, tags }) => (
     <li class='col-span-4'>
+
+      <IconTailwind class='size-5'/>
+
       <article>
         <div class='flex items-center justify-between mb-5'>
           <h2 class='text-pink-300 text-4xl md:text-5xl font-extrabold'>
@@ -104,7 +107,7 @@ const projects = [
           <li
             class={`px-4 py-1 ${tag.color} rounded-full flex items-center gap-2`}
           >
-            <tag.icon class='size-5' /> {tag.name}
+            <tag.Icon class='size-5' /> {tag.name}
           </li>
         ))}
       </ul>
