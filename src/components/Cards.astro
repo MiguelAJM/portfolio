@@ -57,7 +57,7 @@ const projects = [
   {
     title: 'Anime Hub',
     description:
-      'Busca animes de manera sencilla y sencilla. Puedes guardar animes tus animes favoritos. Hecha con NextJS y Tailwind.',
+      'Busca animes de manera sencilla y sencilla. Puedes guardar tus animes favoritos. Hecha con NextJS y Tailwind.',
     thumbnail: AnimeHubImg,
     link: 'https://animes-hub.vercel.app/',
     repo: 'https://github.com/MiguelAJM/animes-hub',
@@ -109,7 +109,6 @@ const projects = [
 
       <article class='relative rounded-xl overflow-hidden bg-slate-800 w-full'>
         <a href={link} target='_blank'>
-          <span class='hidden'>{title}</span>
           <img
             class='transition-transform duration-300 ease-in-out hover:scale-150'
             src={thumbnail.src}
