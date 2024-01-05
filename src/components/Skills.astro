@@ -11,33 +11,36 @@ import IconTailwind from '../assets/icons/IconTailwind.astro'
 import IconNodeJS from '../assets/icons/IconNodeJS.astro'
 
 const technologies = [
-  { name: 'JavaScript', icon: IconJS },
-  { name: 'TypeScript', icon: IconTS },
-  { name: 'Tailwind', icon: IconTailwind },
+  { name: 'JavaScript', Icon: IconJS },
+  { name: 'TypeScript', Icon: IconTS },
+  { name: 'Tailwind', Icon: IconTailwind }
 ]
 
 const learnTechnologies = [
-  { name: 'Astro', icon: IconAstro },
-  { name: 'React', icon: IconReact },
-  { name: 'NextJS', icon: IconNextJS },
-  { name: 'NodeJS', icon: IconNodeJS },
-  { name: 'Firebase', icon: IconFirebase },
+  { name: 'Astro', Icon: IconAstro },
+  { name: 'React', Icon: IconReact },
+  { name: 'NextJS', Icon: IconNextJS },
+  { name: 'NodeJS', Icon: IconNodeJS },
+  { name: 'Firebase', Icon: IconFirebase }
 ]
 ---
 
-<section id='habilidades' class='w-full md:w-[720px] container mx-auto pt-20 pb-8'>
+<section
+  id='habilidades'
+  class='w-full md:w-[720px] container mx-auto pt-20 pb-8'
+>
   <h2 class='flex gap-2 items-center text-4xl md:text-5xl font-extrabold mb-8'>
     <IconCode class='size-10 md:size-12' /><span>Habilidades</span>
   </h2>
 
   <ul class='grid grid-cols-4 gap-2 text-center mb-12'>
     {
-      technologies.map((item) => (
+      technologies.map(({ name, Icon }) => (
         <li class='col-span-2 md:col-span-1 size-full flex items-center gap-2 p-4 border-2 bg-slate-900 border-slate-700 rounded-2xl'>
           <span>
-            <item.icon class='size-5' />
+            <Icon class='size-5' />
           </span>
-          <h3 class='font-bold'>{item.name}</h3>
+          <h3 class='font-bold'>{name}</h3>
         </li>
       ))
     }
@@ -49,12 +52,12 @@ const learnTechnologies = [
 
   <ul class='grid grid-cols-4 gap-2 text-center'>
     {
-      learnTechnologies.map((item) => (
+      learnTechnologies.map(({name, Icon}) => (
         <li class='col-span-2 md:col-span-1 size-full flex items-center gap-2 p-4 border-2 bg-slate-900 border-slate-700 rounded-2xl'>
           <span>
-            <item.icon class='size-5' />
+            <Icon class='size-5' />
           </span>
-          <h3 class='font-bold'>{item.name}</h3>
+          <h3 class='font-bold'>{name}</h3>
         </li>
       ))
     }

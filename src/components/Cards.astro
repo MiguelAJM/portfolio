@@ -79,9 +79,6 @@ const projects = [
 {
   projects.map(({ title, description, thumbnail, link, repo, tags }) => (
     <li class='col-span-4'>
-
-      <IconTailwind class='size-5'/>
-
       <article>
         <div class='flex items-center justify-between mb-5'>
           <h2 class='text-pink-300 text-4xl md:text-5xl font-extrabold'>
@@ -103,11 +100,9 @@ const projects = [
       </article>
 
       <ul class='flex gap-4 flex-wrap items-center my-5'>
-        {tags.map((tag) => (
-          <li
-            class={`px-4 py-1 ${tag.color} rounded-full flex items-center gap-2`}
-          >
-            <tag.Icon class='size-5' /> {tag.name}
+        {tags.map(({ name, color, Icon }) => (
+          <li class={`px-4 py-1 ${color} rounded-full flex items-center gap-2`}>
+            <Icon class='size-5' /> {name}
           </li>
         ))}
       </ul>
