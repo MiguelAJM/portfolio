@@ -48,8 +48,7 @@ const TAGS = {
 const projects = [
   {
     title: 'Smile Notes',
-    description:
-      'Ahora crear notas es más fácil con esta aplicación hecha con React, NextUI y Firebase.',
+    description: 'Ahora crear notas es más fácil con esta aplicación.',
     thumbnail: SmileNotesImg,
     link: 'https://smile-notes-app.vercel.app/',
     repo: 'https://github.com/MiguelAJM/smile-notes-app',
@@ -57,8 +56,7 @@ const projects = [
   },
   {
     title: 'Anime Hub',
-    description:
-      'Busca animes de manera sencilla y sencilla. Puedes guardar tus animes favoritos. Hecha con NextJS y Tailwind.',
+    description: 'Busca y guarda tus animes favoritos de forma fácil y rápida.',
     thumbnail: AnimeHubImg,
     link: 'https://animes-hub.vercel.app/',
     repo: 'https://github.com/MiguelAJM/animes-hub',
@@ -67,8 +65,7 @@ const projects = [
 
   {
     title: 'Rapid Cart',
-    description:
-      'Creado con React, Tailwind, Framer Motion. Compra artículos de manera rápida y sencilla.',
+    description: 'Compra artículos de manera rápida y sencilla.',
     thumbnail: RapidCartImg,
     link: 'https://rapid-cart.vercel.app/',
     repo: 'https://github.com/MiguelAJM/rapid-cart',
@@ -95,12 +92,14 @@ const projects = [
           <h2 class='text-sky-300 text-2xl md:text-3xl font-extrabold mb-4'>
             {title}
           </h2>
-          <p class='text-xl md:text-lg text-gray-300/90'>{description}</p>
+          <p class='text-xl md:text-lg text-gray-300/90 text-balance'>
+            {description}
+          </p>
         </article>
 
-        <ul class='flex gap-4 flex-wrap items-center my-4'>
+        <ul class='flex gap-2 flex-wrap items-center my-4'>
           {tags.map(({ color, Icon }) => (
-            <li class={`p-1.5 ${color} rounded-full flex items-center gap-2`}>
+            <li class={`p-1.5 ${color} rounded-full flex items-center`}>
               <Icon class='size-5' />
             </li>
           ))}
@@ -110,7 +109,7 @@ const projects = [
           <a
             href={link}
             target='_blank'
-            class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-200 text-black text-lg md:text-xl font-bold rounded-lg group/hover'
+            class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-300 text-black text-lg md:text-xl font-bold rounded-lg group/hover'
           >
             <span>
               <IconExternalLink class='size-5 duration-300 ease-in-out transition group-hover/hover:scale-110' />
@@ -120,7 +119,7 @@ const projects = [
           <a
             href={repo}
             target='_blank'
-            class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-200 text-black text-lg md:text-xl font-bold rounded-lg group/hover'
+            class='flex flex-row-reverse items-center gap-2 px-4 py-2 bg-zinc-300 text-black text-lg md:text-xl font-bold rounded-lg group/hover'
           >
             <span>
               <IconLink class='size-5 duration-300 ease-in-out transition group-hover/hover:scale-110' />
